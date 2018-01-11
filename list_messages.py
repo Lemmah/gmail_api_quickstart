@@ -32,7 +32,6 @@ def ListMessagesMatchingQuery(service, user_id, query=''):
       response = service.users().messages().list(userId=user_id, q=query,
                                          pageToken=page_token).execute()
       messages.extend(response['messages'])
-      print(messages)
 
     return messages
   except errors.HttpError as error:
@@ -71,5 +70,10 @@ def ListMessagesWithLabels(service, user_id, label_ids=[]):
   except errors.HttpError as error:
     print( 'An error occurred: {}' .format(error))
 
+def get_unread_messages():
+  messages = ListMessagesWithLabels(quickstart.main()[1], 'me', 'UNREAD')
+  message_ids = [message['id'] for message in messages]
+  return message_ids
+
 if __name__ == '__main__':
-    ListMessagesWithLabels(quickstart.main()[1], 'me', 'UNREAD')
+    get_unread_messages()
