@@ -65,7 +65,7 @@ def main():
     else:
       print('Labels:')
       for label in labels:
-        print(label['name'])
+        print(label)
     return (credentials, service)
 
 
