@@ -66,6 +66,7 @@ def main():
       print('Labels:')
       for label in labels:
         print(label['name'])
+    return (credentials, service)
 
 
 if __name__ == '__main__':
