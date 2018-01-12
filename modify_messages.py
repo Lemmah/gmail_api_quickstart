@@ -5,7 +5,7 @@ from apiclient import errors
 import list_messages
 
 
-def ModifyMessage(service, user_id, msg_id, msg_labels):
+def modify_message(service, user_id, msg_id, msg_labels):
   """Modify the Labels on the given Message.
 
   Args:
@@ -30,7 +30,7 @@ def ModifyMessage(service, user_id, msg_id, msg_labels):
     print( 'An error occurred: {}' .format(error))
 
 
-def CreateMsgLabels():
+def create_msg_labels():
   """Create object to update labels.
 
   Returns:
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     msg_ids = list_messages.get_unread_messages()
     service = list_messages.quickstart.main()[1]
     user_id = "me"
-    msg_labels = CreateMsgLabels()
+    msg_labels = create_msg_labels()
     for msg_id in msg_ids:
-      ModifyMessage(service, user_id, msg_id, msg_labels)
+      modify_message(service, user_id, msg_id, msg_labels)
     print("Good work Prof. Lemmah, all your messages are now marked as read.")

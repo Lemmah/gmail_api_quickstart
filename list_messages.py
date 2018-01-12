@@ -5,7 +5,7 @@ from apiclient import errors
 import quickstart
 
 
-def ListMessagesMatchingQuery(service, user_id, query=''):
+def list_msgs_matching_query(service, user_id, query=''):
   """List all Messages of the user's mailbox matching the query.
 
   Args:
@@ -38,7 +38,7 @@ def ListMessagesMatchingQuery(service, user_id, query=''):
     print( 'An error occurred: {}' .format(error))
 
 
-def ListMessagesWithLabels(service, user_id, label_ids=[]):
+def list_msgs_with_labels(service, user_id, label_ids=[]):
   """List all Messages of the user's mailbox with label_ids applied.
 
   Args:
@@ -71,7 +71,7 @@ def ListMessagesWithLabels(service, user_id, label_ids=[]):
     print( 'An error occurred: {}' .format(error))
 
 def get_unread_messages():
-  messages = ListMessagesWithLabels(quickstart.main()[1], 'me', 'UNREAD')
+  messages = list_msgs_with_labels(quickstart.main()[1], 'me', 'UNREAD')
   message_ids = [message['id'] for message in messages]
   return message_ids
 

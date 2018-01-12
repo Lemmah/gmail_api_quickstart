@@ -7,7 +7,7 @@ from apiclient import errors
 from googleapiclient.discovery import build
 import quickstart
 
-def GetMessage(service, user_id, msg_id):
+def get_message(service, user_id, msg_id):
   """Get a Message with given ID.
 
   Args:
@@ -29,7 +29,7 @@ def GetMessage(service, user_id, msg_id):
     print('An error occurred: {}'.format(error))
 
 
-def GetMimeMessage(service, user_id, msg_id):
+def get_mime_message(service, user_id, msg_id):
   """Get a Message and use it to create a MIME Message.
 
   Args:
@@ -66,4 +66,4 @@ def build_service(credentials):
     http = credentials.authorize(http)
     return build('gmail', 'v1', http=http)
 
-GetMessage(quickstart.main()[1], 'me', '160e3c6cf92364ba')
+get_message(quickstart.main()[1], 'me', '160e3c6cf92364ba')
