@@ -5,9 +5,13 @@ class GmailAccount:
   3. Compose and send a new message
   """
   
-  def __init__(self):
+  def __init__(self, email, password):
     """Construct all the instance variables
     """
+    pass
+
+  def auth(self):
+    """Authenticate account before performing any operations"""
     pass
 
   def get_msg(self, *args, **kwargs):
@@ -34,3 +38,4 @@ class GmailAccount:
     """Create a new message label
     """
     pass
+
