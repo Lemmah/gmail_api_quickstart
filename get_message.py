@@ -9,13 +9,11 @@ from googleapiclient.discovery import build
 
 def get_message(service, user_id, msg_id):
   """Get a Message with given ID.
-
   Args:
     service: Authorized Gmail API service instance.
     user_id: User's email address. The special value "me"
     can be used to indicate the authenticated user.
     msg_id: The ID of the Message required.
-
   Returns:
     A Message.
   """
@@ -28,16 +26,13 @@ def get_message(service, user_id, msg_id):
   except errors.HttpError as error:
     print('An error occurred: {}'.format(error))
 
-
 def get_mime_message(service, user_id, msg_id):
   """Get a Message and use it to create a MIME Message.
-
   Args:
     service: Authorized Gmail API service instance.
     user_id: User's email address. The special value "me"
     can be used to indicate the authenticated user.
     msg_id: The ID of the Message required.
-
   Returns:
     A MIME Message, consisting of data from Message.
   """
