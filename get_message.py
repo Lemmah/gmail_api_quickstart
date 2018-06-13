@@ -3,9 +3,9 @@
 
 import base64
 import email
+import quickstart
 from apiclient import errors
 from googleapiclient.discovery import build
-import quickstart
 
 def get_message(service, user_id, msg_id):
   """Get a Message with given ID.
